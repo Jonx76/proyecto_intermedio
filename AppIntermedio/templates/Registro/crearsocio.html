@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block titulo %} Agregar nuevo socio {% endblock %}
+
+{% block contenido %}
+   
+<div class="card">
+    <div class="card-header">
+        Agregar un socio
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Datos del socio</h4>
+
+    {% include 'registro/formregistro.html' %}
+    </div>
+    <div class="card-footer text-muted">
+        
+    </div>
+</div>
+
+{% endblock %}

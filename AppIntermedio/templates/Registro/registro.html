@@ -1,17 +1,43 @@
 {% extends "base.html" %}
 
-{% block titulo %} Registrarse {% endblock %}
+{% block titulo %} Lista de Socios {% endblock %}
 
 {% block contenido %}
    
 <div class="card">
     <div class="card-header">
-        Crea tu propio usuario
+        <a name="" id="" class="btn btn-success" href="{% url 'crearsocio' %}" role="button">Agregar nuevo socio</a>
     </div>
     <div class="card-body">
-        <h4 class="card-title">Datos de registro</h4>
+        <h4 class="card-title">Registro de socios</h4>
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Telefono</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
 
-    {% include 'registro/formregistro.html' %}
+                {% for registro in registro %}
+                <tr>
+                    <td> {{ registro.nombre }} </td>
+                    <td> {{ registro.apellido }} </td>
+                    <td> {{ registro.telefono }} </td>
+                    <td> {{ registro.email }} </td>
+                    
+                 
+                </tr>
+
+                {% endfor %}
+             
+            </tbody>
+        </table>
+        
     </div>
     <div class="card-footer text-muted">
         
@@ -19,3 +45,4 @@
 </div>
 
 {% endblock %}
+

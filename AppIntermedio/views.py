@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Libro
+from .models import Libro, Registro
 from .forms import LibroForm, RegistroForm
 from django.http import HttpResponse
 
@@ -38,8 +38,12 @@ def datoscontacto(request):
     return render(request, "contacto/contacto.html")
 
 def registro(request):
-    formulario = RegistroForm(request.POST or None,request.FILES or None)
+    registro = Registro.objects.all()
+    return render(request,"registro/registro.html", {'registro': registro})
+
+def crearsocio(request):
+    formulario = RegistroForm(request.POST or None)
     if formulario.is_valid():
         formulario.save()
         return redirect('registro')
-    return render(request,"registro/registro.html", {'formulario': formulario})
+    return render(request,"registro/crearsocio.html", {'formulario': formulario})

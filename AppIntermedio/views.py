@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Libro
-from .forms import LibroForm
+from .forms import LibroForm, RegistroForm
 from django.http import HttpResponse
 
 
@@ -36,3 +36,10 @@ def contacto(request):
 
 def datoscontacto(request):
     return render(request, "contacto/contacto.html")
+
+def registro(request):
+    formulario = RegistroForm(request.POST or None,request.FILES or None)
+    if formulario.is_valid():
+        formulario.save()
+        return redirect('registro')
+    return render(request,"registro/registro.html", {'formulario': formulario})

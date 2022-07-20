@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block titulo %} Registrarse {% endblock %}
+
+{% block contenido %}
+   
+<div class="card">
+    <div class="card-header">
+        Crea tu propio usuario
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Datos de registro</h4>
+
+    {% include 'registro/formregistro.html' %}
+    </div>
+    <div class="card-footer text-muted">
+        
+    </div>
+</div>
+
+{% endblock %}

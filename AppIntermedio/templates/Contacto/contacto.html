@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block titulo %} Contacto {% endblock %}
+
+{% block contenido %}
+   
+<div class="card">
+    
+    <div class="card-body">
+        <h4 class="card-title">Datos de contacto</h4>
+        
+        <div class="card-body">
+            
+    
+        {% include 'contacto/datoscontacto.html' %}
+        </div>
+        <div class="card-footer text-muted">
+                    <td>
+                        <a name="" id="" class="btn btn-info" href="{% url 'contacto' %}" role="button">Cargar consulta</a> 
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td scope="row"></td>   
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+    <div class="card-footer text-muted">
+        
+    </div>
+</div>
+
+{% endblock %}
+
+bs

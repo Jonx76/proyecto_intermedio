@@ -28,9 +28,6 @@ def editar(request):
 def ubicacion(request):
     return render(request, "ubicacion/buscar.html")
 
-def buscar(request):
-    return render(request, "ubicacion/buscar.html")
-
 def contacto(request):
     return render(request, "contacto/contacto.html")
 

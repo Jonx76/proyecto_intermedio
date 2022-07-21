@@ -32,6 +32,6 @@ urlpatterns = [
     path('registro/', registro, name='registro'),
     path('registro/crearsocio', crearsocio, name='crearsocio'),
     path('about/about', about, name='about'),
-    #path('about/aboutus', aboutus, name='aboutus'),
+    path('about/aboutus', aboutus, name='aboutus'),
 
 ]

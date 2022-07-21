@@ -44,3 +44,9 @@ def crearsocio(request):
         formulario.save()
         return redirect('registro')
     return render(request,"registro/crearsocio.html", {'formulario': formulario})
+
+def about(request):
+    return render(request, "about/about.html")
+
+def aboutus(request):
+    return render(request, "about/aboutus.html")

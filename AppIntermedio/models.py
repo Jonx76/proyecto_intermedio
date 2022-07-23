@@ -16,14 +16,6 @@ class Libro(models.Model):
         self.image.storage.delete(self.imagen.name)
         super().delete()
 
-#class autor
-
-class Ubicacion(models.Model):
-    titulo = models.CharField(max_length=100, verbose_name='Título')
-    def __str__(self):
-        fila = "Titulo: " + self.titulo
-        return fila
-
 class Contacto(models.Model):
     titulo = models.CharField(max_length=100, verbose_name='Título')
     def __str__(self):
@@ -45,3 +37,9 @@ class Registro(models.Model):
 
 class About(models.Model):
         pass
+
+class Consulta(models.Model):
+    titulo = models.CharField(max_length=300)
+    def __str__(self):
+        fila = self.titulo
+        return fila  

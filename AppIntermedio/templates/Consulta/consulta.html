@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block titulo %} Lista de Socios {% endblock %}
+
+{% block contenido %}
+   
+<div class="card">
+    
+    <div class="card-body">
+        <h4 class="card-title">Haznos llegar tu consulta!</h4>
+        <table class="table">
+            <thead>
+
+                    
+                    Si quieres o necesitas mas información sobre la Biblioteca Digital, dejanos tus dudas!
+                    
+                
+            </thead>
+            <tbody>
+
+                {% for consulta in consulta %}
+                
+                     {{ consulta.consulta }}                
+                
+
+                {% endfor %}
+             
+            </tbody>
+        </table>
+        
+        
+        
+    </div>
+    <div class="card-header">
+        <a name="" id="" class="btn btn-success" href="{% url 'crearconsulta' %}" role="button">Enviar consulta</a>
+    </div>
+    
+</div>
+
+{% endblock %}

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Libro, Registro
-from .forms import LibroForm, RegistroForm
+from .models import Consulta, Libro, Registro
+from .forms import ConsultaForm, LibroForm, RegistroForm, ConsultaForm
 from django.http import HttpResponse
 
 
@@ -25,9 +25,6 @@ def crear(request):
 def editar(request):
     return render(request,"libros/editar.html")
 
-def ubicacion(request):
-    return render(request, "ubicacion/buscar.html")
-
 def contacto(request):
     return render(request, "contacto/contacto.html")
 
@@ -49,4 +46,15 @@ def about(request):
     return render(request, "about/about.html")
 
 def aboutus(request):
-    return render(request, "about/aboutus.html")
+    pass
+    
+def consulta(request):
+    consulta = Consulta.objects.all()
+    return render(request, "consulta/consulta.html", {"consulta": consulta})    
+
+def crearconsulta(request):
+    formulario = ConsultaForm(request.POST or None)
+    if formulario.is_valid():
+        formulario.save()
+        return redirect('consulta')
+    return render(request,"consulta/crearconsulta.html", {'formulario': formulario})

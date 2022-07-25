@@ -19,6 +19,7 @@
                     <th>Imagen</th>
                     <th>Descripción</th>
                     <th>Acciones</th>
+                    <th>Fecha de carga</th>
                 </tr>
             </thead>
             <tbody>
@@ -27,7 +28,8 @@
                     <td> {{ libro.titulo }} </td>
                     <td> {{ libro.imagen }} </td>
                     <td> {{ libro.descripcion }} </td>
-                    <td>            </td>     
+                    <td>            </td>
+                    <td>{{ libro.fecha }}</td>     
                 </tr>
 
                 {% endfor %}

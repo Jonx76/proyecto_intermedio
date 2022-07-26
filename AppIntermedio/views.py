@@ -2,15 +2,19 @@ from django.shortcuts import render, redirect
 from .models import Consulta, Libro, Registro
 from .forms import ConsultaForm, LibroForm, RegistroForm, ConsultaForm
 from django.http import HttpResponse
+from django.views.generic import ListView
+from django.views.generic.detail import DetailView
+
 
 
 # Create your views here.
 
 
 
-def libros(request):
-    libros = Libro.objects.all()
-    return render(request,"libros/index.html", {'libros': libros})
+class LibroList(ListView):
+    model = Libro
+    context_object_name = "libros"
+    template_name = "Libros\index.html"
 
 def inicio(request):
     return render(request,"AppIntermedio/inicio.html")

@@ -62,3 +62,9 @@ def crearconsulta(request):
         formulario.save()
         return redirect('consulta')
     return render(request,"consulta/crearconsulta.html", {'formulario': formulario})
+
+class LibroDetalle(DetailView):
+    model = Libro
+    context_object_name = "libros"
+    template_name = "Libros\detalle.html"
+    fields= "__all__"

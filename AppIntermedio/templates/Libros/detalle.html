@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block titulo %} Detalles del libro {% endblock %}
+
+{% block contenido %}
+
+<div class="card">
+    <div class="card-header">
+        Detalles
+    </div>
+    <div class="card-body">
+        
+        <p>Titulo del libro: <i>{{ libros.titulo }}</i></p>
+        <p>Descripción <i>{{ libros.descripcion }}</i></p>
+        <p>Fecha de Carga: <i>{{ libros.fecha }}</i></p>
+        <image src="{{ libros.imagen.url }}">
+
+    </div>
+    <div class="card-footer text-muted">
+        <p>
+            <a href="{% url 'libros' %}">Regresar al listado</a> 
+         </p>
+    </div>
+</div>
+
+{% endblock %}

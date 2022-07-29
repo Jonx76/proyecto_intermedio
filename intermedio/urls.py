@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from AppIntermedio.views import inicio, crear, editar, contacto, datoscontacto, crearsocio, registro, about, aboutus, consulta, crearconsulta, LibroList, LibroDetalle
 from AppIntermedio import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
@@ -37,3 +39,4 @@ urlpatterns = [
 
 
 ]
+urlpatterns+= static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

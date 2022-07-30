@@ -1,0 +1,23 @@
+html {
+  background: url('../Ingreso/imagenes/imagen.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+body {
+  background-color: inherit;
+}
+
+.full-width {
+  min-height: 100vh;
+}
+
+form {
+  background-color:blueviolet ;
+  box-shadow: 5px 5px 5px rgba(0,0,0,.2);
+}
+
+@media (max-width: 575.98px) {
+  form {
+      width: 100%;
+  }
+}

@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="static\imagenes\icono_libro.png">
+		<title>Biblioteca Digital</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="static/css/estilos.css" />
+	</head>
+	<body>
+	<div class="container">	
+	<div class="bienvenida row justify-content-center pt-2 mt-5 mr-1"> Bienvenido a la Biblioteca Digital
+		
+	</div>	
+		<div class="container py-2">
+			<div class="row justify-content-center pt-5 mt-5 mr-1">
+				<div class="col-md-4 formulario">
+					<div class="form-group text-center">
+						
+					<h2 class="titulo text-light">Inicia Sesion</h2>
+						
+						<div class="table-responsive">
+							<div class="form-group mx-sm-4">
+								<table class="table table-striped">
+									<form method="POST">
+										{% csrf_token %} {{form.as_p}}
+
+										<div class="mb-2 pt-10 mt-5form-check">
+											<input
+												type="checkbox"
+												class="form-check-input"
+												id="rememberMe"
+											/>
+											<label class="form-check-label" for="rememberMe"
+												>Recuerdame</label
+											>
+										</div>
+										<button type="submit" class="btn btn-block ingresar">
+											Ingresar
+										</button>
+										<div class="registrarse mb-1 mt-2">
+											No tienes cuenta?
+											<a href="{% url 'panel-signup' %}"> Registrate!</a>
+										</div>
+										<p class="mt-5 mb-3 text-light">© Coderhouse - 2022 - Miño, Pereira y Bancalari </p>
+									</form>
+								</table>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		<script
+			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+			integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+			integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>

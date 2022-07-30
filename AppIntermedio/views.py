@@ -2,9 +2,12 @@ from django.shortcuts import render, redirect
 from .models import Consulta, Libro, Registro
 from .forms import ConsultaForm, LibroForm, RegistroForm, ConsultaForm
 from django.http import HttpResponse
-from django.views.generic import ListView
+from django.views.generic import ListView, CreateView
 from django.views.generic.detail import DetailView
-
+from django.contrib.auth.forms import UserCreationForm
+from django.urls import reverse_lazy
+from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.views import LoginView, LogoutView
 
 
 # Create your views here.
@@ -68,3 +71,17 @@ class LibroDetalle(DetailView):
     context_object_name = "libros"
     template_name = "Libros\detalle.html"
     fields= "__all__"
+
+#-------- Seccion Ingreso    
+class PanelLogin(LoginView):
+    template_name = 'ingreso/login.html'
+    next_page = reverse_lazy("inicio")
+
+class PanelLogout(LogoutView):
+    template_name = 'ingreso/logout.html'
+
+class SignUpView(SuccessMessageMixin, CreateView):
+  template_name = 'ingreso/crear_cuenta_form.html'
+  success_url = reverse_lazy('inicio')
+  form_class = UserCreationForm
+  success_message = "¡¡ Se creo tu perfil satisfactoriamente !!"

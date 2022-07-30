@@ -1,0 +1,28 @@
+.bienvenida{
+    text-align:justify, center;
+    font-size: 50px;
+    color: #212529b6;
+    
+    
+}
+.ingresar{
+    background: #222a3fda;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 400! important;
+    color: white;
+    box-shadow: 0 0 30px rgba(0,0,0,0.568);
+
+
+}
+.back a{
+    margin: 30px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    color:rgb(32, 151, 170);
+    text-decoration: none;
+   
+
+}
+

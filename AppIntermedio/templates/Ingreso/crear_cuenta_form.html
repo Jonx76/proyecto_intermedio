@@ -22,23 +22,24 @@
 		<link rel="stylesheet" href="\static\css\estilos_creacion.css" />
 	</head>
 	<body>
+		
         <div class="container">
-		<div class="bienvenida row justify-content-center pt-2 mt-2 mr-1">
-		<h1><i class="fa-solid fa-users"></i> Créate un usuario!</h1>
-        </div>
+		
+		</div>
+		<div class="bienvenida row justify-content-center pt-2 mr-1">
+		<center><img src="\static\imagenes\Logo.jpg" alt="" width="100px" height="100px"><h1>Créate un usuario!</h1></center>
         </div>
 			<div class="container py-2 mt-3">
-				
-
-					
-
+				<div class="cuadro mb-1 mt-2">
 					<form method="post">
 						{% csrf_token %} {{ form.as_p }}
-						<input type="submit" value="Create Account" class="btn btn-block ingresar">
+						<input type="submit" value="Create Account" class="btn btn-block ingresar">					
 					</form>
+				</div>	
                     <div class="back mb-1 mt-2">
                     <a href="{% url 'login' %}"><i class="fa-solid fa-circle-arrow-left"></i>   Back to Login</a>
                     </div>
+				
 				</div>
 			</div>
 			<script

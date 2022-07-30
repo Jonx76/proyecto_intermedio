@@ -1,3 +1,4 @@
+
 .bienvenida{
     text-align:justify, center;
     font-size: 50px;
@@ -23,6 +24,14 @@
     color:rgb(32, 151, 170);
     text-decoration: none;
    
+
+}
+.cuadro{
+    text-align:justify, center;
+    font-size: 50px;
+    color: white;
+    box-shadow: 0 0 30px rgba(0,0,0,0.568);
+    border-radius: 50px;
 
 }
 

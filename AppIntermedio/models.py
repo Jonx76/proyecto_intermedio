@@ -14,7 +14,7 @@ class Libro(models.Model):
         return fila
 
     def delete(self, using=None, keep_parents=False):
-        self.image.storage.delete(self.imagen.name)
+        self.imagen.storage.delete(self.imagen.name)
         super().delete()
 
 class Contacto(models.Model):

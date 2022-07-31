@@ -85,3 +85,8 @@ class SignUpView(SuccessMessageMixin, CreateView):
   success_url = reverse_lazy('inicio')
   form_class = UserCreationForm
   success_message = "¡¡ Se creo tu perfil satisfactoriamente !!"
+
+def eliminar(request, titulo):
+    libro = Libro.objects.get(titulo=titulo)
+    libro.delete()  
+    return redirect('libros')

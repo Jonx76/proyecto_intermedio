@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from AppIntermedio.views import inicio, crear, editar, contacto, datoscontacto, crearsocio, registro, about, aboutus, consulta, crearconsulta, LibroList, LibroDetalle, PanelLogin, PanelLogout, SignUpView
+from AppIntermedio.views import inicio, crear, editar, contacto, datoscontacto, crearsocio, registro, about, aboutus, consulta, crearconsulta, LibroList, LibroDetalle, PanelLogin, PanelLogout, SignUpView, eliminar
 from AppIntermedio import views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -39,6 +39,7 @@ urlpatterns = [
     path("", PanelLogin.as_view(), name="login"),
     path("logout/", PanelLogout.as_view(), name="logout"),
     path("signup/", SignUpView.as_view(), name="panel-signup"),
+    path("eliminar/<titulo>", eliminar, name='eliminar'),
 
 ]
 urlpatterns+= static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

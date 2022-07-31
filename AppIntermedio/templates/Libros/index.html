@@ -18,17 +18,22 @@
                     <th>Título</th>
                     <th>Imagen</th>
                     <th>Descripción</th>
-                    <th>Acciones</th>
                     <th>Fecha de carga</th>
+                    <th>Acciones</th>
+                    
                 </tr>
             </thead>
             <tbody>
                 {% for libro in libros %}
                 <tr>
                     <td><a href="{% url 'detallelibro' libro.id %}">{{ libro.titulo }}</a></td>
-                    <td> {{ libro.imagen }} </td>
+                    
                     <td> {{ libro.descripcion }} </td>
-                    <td>            </td>
+                    <td> 
+
+                    <img src="{{ libro.imagen.url }}" height="100"  />
+
+                    </td>
                     <td>{{ libro.fecha }}</td>     
                 </tr>
 

@@ -36,6 +36,9 @@ class Registro(models.Model):
         fila2 ="Telefono de contacto" + self.telefono
         return fila2
 
+    def delete(self, using=None, keep_parents=False):
+        super().delete()
+
 class About(models.Model):
         pass
 

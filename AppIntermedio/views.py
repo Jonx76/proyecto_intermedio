@@ -95,3 +95,8 @@ def eliminar(request, titulo):
     libro = Libro.objects.get(titulo=titulo)
     libro.delete()  
     return redirect('libros')
+
+def eliminarregistro(request, nombre):
+    registro = Registro.objects.get(nombre=nombre)
+    registro.delete()  
+    return redirect('registro')

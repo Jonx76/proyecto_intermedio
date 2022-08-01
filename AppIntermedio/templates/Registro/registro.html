@@ -19,6 +19,7 @@
                     <th>Apellido</th>
                     <th>Telefono</th>
                     <th>Email</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,12 +30,14 @@
                     <td> {{ registro.apellido }} </td>
                     <td> {{ registro.telefono }} </td>
                     <td> {{ registro.email }} </td>
+                    <td> <a name="" id="" class="btn btn-danger" href="{% url 'eliminarregistro' registro.nombre %}" role="button">Borrar <a/> </td> 
                     
                  
                 </tr>
 
+
                 {% endfor %}
-             
+                
             </tbody>
         </table>
         

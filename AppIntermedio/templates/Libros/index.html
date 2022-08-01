@@ -16,8 +16,8 @@
                 <tr>
                     
                     <th>Título</th>
-                    <th>Imagen</th>
                     <th>Descripción</th>
+                    <th>Imagen</th>                
                     <th>Fecha de carga</th>
                     <th>Acciones</th>
                     
@@ -34,7 +34,7 @@
                     </td>
                     <td>{{ libro.fecha }}</td>
                     <td> 
-                        <a name="" id="" class="btn btn-info" href="{% url 'editar' %}" role="button">Editar</a> |
+                        <a name="" id="" class="btn btn-info" href="{% url 'editar' libro.titulo %}" role="button">Editar</a> |
                         <a name="" id="" class="btn btn-danger" href="{% url 'eliminar' libro.titulo %}" role="button">Borrar</a>
                     </td>      
                 </tr>

@@ -23,14 +23,19 @@ def inicio(request):
     return render(request,"AppIntermedio/inicio.html")
 
 def crear(request):
-    formulario = LibroForm(request.POST or None,request.FILES or None)
+    formulario = LibroForm(request.POST or None, request.FILES or None)
     if formulario.is_valid():
         formulario.save()
         return redirect('libros')
-    return render(request,"libros/crear.html", {'formulario': formulario})
+    return render(request,'libros/crear.html', {'formulario': formulario})
 
-def editar(request):
-    return render(request,"libros/editar.html")
+def editar(request, titulo):
+    libro = Libro.objects.get(titulo=titulo)
+    formulario = LibroForm(request.POST or None, request.FILES or None, instance=libro)
+    if formulario.is_valid() and request.POST:
+        formulario.save()
+        return redirect('libros')
+    return render(request,"libros/editar.html", {'formulario': formulario})
 
 def contacto(request):
     return render(request, "contacto/contacto.html")

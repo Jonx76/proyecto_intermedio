@@ -40,6 +40,7 @@ urlpatterns = [
     path("logout/", PanelLogout.as_view(), name="logout"),
     path("signup/", SignUpView.as_view(), name="panel-signup"),
     path("eliminar/<titulo>", eliminar, name='eliminar'),
+    path("libros/editar/<titulo>", editar, name='editar'),
 
 ]
 urlpatterns+= static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

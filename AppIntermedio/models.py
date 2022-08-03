@@ -42,8 +42,20 @@ class Registro(models.Model):
 class About(models.Model):
         pass
 
+opciones_consultas = [
+    [0, "Consulta"],
+    [1, "Reclamo"],
+    [2, "Sugerencia"]
+    
+]
+
 class Consulta(models.Model):
-    titulo = models.CharField(max_length=300)
+    nombre = models.CharField(max_length=50)
+    correo = models.EmailField()
+    tipo_consulta = models.IntegerField(choices=opciones_consultas)
+    mensaje= models.TextField()
+    
+
     def __str__(self):
-        fila = self.titulo
-        return fila  
+        return self.nombre
+

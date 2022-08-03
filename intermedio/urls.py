@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from AppIntermedio.views import inicio, crear, editar, contacto, datoscontacto, crearsocio, registro, about, aboutus, consulta, crearconsulta, LibroList, LibroDetalle, PanelLogin, PanelLogout, SignUpView, eliminar, eliminarregistro
+from AppIntermedio.views import inicio, crear, consulta, editar, contacto, datoscontacto, crearsocio, registro, about, aboutus, LibroList, LibroDetalle, PanelLogin, PanelLogout, SignUpView, eliminar, eliminarregistro
 from AppIntermedio import views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -33,8 +33,6 @@ urlpatterns = [
     path('registro/crearsocio', crearsocio, name='crearsocio'),
     path('about/', about, name='about'),
     path('about/aboutus', aboutus, name='aboutus'),
-    path("consulta/", consulta, name="consulta"),
-    path("consulta/crearconsulta", crearconsulta, name="crearconsulta"),
     path('<int:pk>/', views.LibroDetalle.as_view(), name='detallelibro'),
     path("", PanelLogin.as_view(), name="login"),
     path("logout/", PanelLogout.as_view(), name="logout"),
@@ -42,6 +40,6 @@ urlpatterns = [
     path("eliminar/<titulo>", eliminar, name='eliminar'),
     path("libros/editar/<titulo>", editar, name='editar'),
     path("eliminarregistro/<nombre>", eliminarregistro, name='eliminarregistro'),
-
+    path("consulta/", consulta, name="consulta"),
 ]
 urlpatterns+= static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

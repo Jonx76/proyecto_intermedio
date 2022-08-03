@@ -6,6 +6,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://kit.fontawesome.com/417c3775f6.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="static\imagenes\icono_libro.png">
 
     <!-- Bootstrap CSS v5.2.0-beta1 -->
@@ -18,11 +19,10 @@
              <a class="nav-item nav-link active" href="{% url 'inicio' %}">Inicio </a> 
              <a class="nav-item nav-link" href="{% url 'libros' %}">Libros</a>
              <a class="nav-item nav-link" href="{% url 'registro' %}">Registro</a>
-             <a class="nav-item nav-link" href="{% url 'consulta' %}">Consulta</a>
              <a class="nav-item nav-link" href="{% url 'contacto' %}">Contacto</a>
              <a class="nav-item nav-link" href="{% url 'about' %}">About Us</a>
              <a class="nav-item nav-link active" href="{% url 'login' %}">Logout </a>
-
+             <a class="nav-item nav-link" href="{% url 'consulta' %}"><i class="fa-solid fa-envelope", style="font-size: 25px"></i></a>            
          </div>
      </nav>
     <div class="container">

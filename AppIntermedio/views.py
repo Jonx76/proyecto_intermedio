@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Consulta, Libro, Registro
-from .forms import ConsultaForm, LibroForm, RegistroForm, ConsultaForm
+from .models import  Libro, Registro
+from .forms import  ConsultaForm, LibroForm, RegistroForm
 from django.http import HttpResponse
 from django.views.generic import ListView, CreateView
 from django.views.generic.detail import DetailView
@@ -59,17 +59,6 @@ def about(request):
 
 def aboutus(request):
     pass
-    
-def consulta(request):
-    consulta = Consulta.objects.all()
-    return render(request, "consulta/consulta.html", {"consulta": consulta})    
-
-def crearconsulta(request):
-    formulario = ConsultaForm(request.POST or None)
-    if formulario.is_valid():
-        formulario.save()
-        return redirect('consulta')
-    return render(request,"consulta/crearconsulta.html", {'formulario': formulario})
 
 class LibroDetalle(DetailView):
     model = Libro
@@ -100,3 +89,20 @@ def eliminarregistro(request, nombre):
     registro = Registro.objects.get(nombre=nombre)
     registro.delete()  
     return redirect('registro')
+
+#--------- Seccion CONSULTAS    
+
+def consulta(request):
+    data= {
+        "form": ConsultaForm()
+
+    }
+
+    if request.method =="POST":
+        formulario = ConsultaForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"] = "Consulta enviada con exito!"
+        else:
+            data["form"] = formulario    
+    return render(request, "Consulta/consulta.html", data)

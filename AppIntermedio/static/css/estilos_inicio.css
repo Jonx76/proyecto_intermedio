@@ -1,0 +1,25 @@
+body {
+
+    background-image: url(../imagenes/biblioteca.jpg);
+    background-repeat: no-repeat;
+ 
+    background-size: cover;
+}
+.cuerpo {
+    padding: 40px;
+    font-size: 16px;
+    font-weight: 400! important;
+    color: white;
+    box-shadow: 0 0 30px rgba(0,0,0,0.568);
+    border-radius: 50px;
+    
+}
+.cuerpo a{
+    background: #222a3fda;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 400! important;
+    color: white;
+    box-shadow: 0 0 30px rgba(0,0,0,0.568);
+
+}

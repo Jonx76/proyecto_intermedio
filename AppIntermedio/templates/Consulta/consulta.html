@@ -1,40 +1,55 @@
 {% extends "base.html" %}
-
-{% block titulo %} Consultas! {% endblock %}
-
+{% load static %}
+{% block titulo %} Consultas {% endblock %}
 {% block contenido %}
+
+<link rel="shortcut icon" href="static/imagenes/icono_libro.png">
+<style>
+
+    ul{
+    background: #222a3fda;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 400! important;
+    color: whitesmoke;
+    box-shadow: 0 0 30px rgba(0,0,0,0.568);
+    border-radius: 50px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+
+    }
+        
+
    
-<div class="card">
-    
-    <div class="card-body">
-        <h4 class="card-title">Haznos llegar tu consulta!</h4>
-        <table class="table">
-            <thead>
-
+</style>
+<body>
+    <h1 style="text-align: center;">Contactanos!</h1>
+    <ul>
+        <div class="table-responsive">
+            <div class="form-group mx-sm-4">
+                <table id="tablaconsultas"> 
+                    <br>   
+                
+                <form action="" class="formulario_consulta" method="post">
                     
-                    Si quieres o necesitas mas información sobre la Biblioteca Digital, dejanos tus dudas!
+                {% csrf_token %} 
                     
+                {{ form }}
+                    <button type="submit" id="btnEnviar" class="button" >Enviar consulta</button>
+                        
+                </form>
                 
-            </thead>
-            <tbody>
-
-                {% for consulta in consulta %}
                 
-                     {{ consulta.consulta }}                
+                {{mensaje}}
                 
-
-                {% endfor %}
-             
-            </tbody>
-        </table>
-        
-        
-        
-    </div>
-    <div class="card-header">
-        <a name="" id="" class="btn btn-success" href="{% url 'crearconsulta' %}" role="button">Enviar consulta</a>
-    </div>
-    
-</div>
-
+                <br>
+                </table>
+                <br>
+            </div>
+        </div>
+    </ul>
+</body>    
 {% endblock %}

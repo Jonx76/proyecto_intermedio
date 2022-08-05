@@ -27,11 +27,14 @@
 						
 					<h2 class="titulo text-light">Inicia Sesión</h2>
 						
+
+						
 						<div class="table-responsive">
 							<div class="form-group mx-sm-4">
 								<table class="table table-striped">
 									<form method="POST">
-										{% csrf_token %} {{form.as_p}}
+										
+										{% csrf_token %} {{ form.as_p }}
 
 										<div class="mb-2 pt-10 mt-5form-check">
 											<input

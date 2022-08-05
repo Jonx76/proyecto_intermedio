@@ -1,8 +1,13 @@
 # proyecto-final-coder
 
-Entrega Intermedia 13/07/2022
+Miño, Bancalari, Pereira
+
 La finalidad de la pagina es la organizacion de libros dentro de una biblioteca. La pagina permite agregar libros con Nombre, Descripcion e Imagen . 
-Una clase responde a los Libros, otra a la ubicacion y otra a un apartado de contacto hacia la biblioteca, en el cual se pide una direccion de correo electronico y hay un espacio para dejar opiniones. 
-Otra funcionalidad es la de registrarse en la web de la biblioteca, registro en el cual se pide nombre, apellido, telefono y direccion de correo electronico. 
+Las diferentes clases corresponden a los libros de la web, un registro de socios, un "buzon" de consultas y quejas, un About y un apartado de contacto (que contiene informacion de la biblioteca)
+En la pagina se pueden registrar libros y socios nuevos, borrar los mismos o bien modificarlos. Tambien se pueden enviar consultas.
+Para acceder a la pagina, se deben registrar usuarios, los cuales pueden iniciar y cerrar sesion. 
+
+link a los casos de prueba y video explicativo de la pagina:
+https://drive.google.com/drive/folders/1jUI4ogvMixPRy-GzKsx6KYbitJzDDC_H?usp=sharing
 
 

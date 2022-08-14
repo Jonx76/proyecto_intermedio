@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block titulo %} Detalles del Usuario {% endblock %}
+
+{% block contenido %}
+
+<div class="card">
+    <div class="card-header">
+        Usuario
+    </div>
+    <div class="card-body">
+        
+        <p>Nombre: {{user.first_name}}</p>
+        <p>Apellido: {{user.last_name}}</p>
+        <p>Email: {{user.email}} </p>
+        <p>Nombre de Usuario: {{user.username}}</p>
+
+    </div>
+    <div class="card-footer text-muted">
+        <a href="{% url 'actualizarusuario' user.id %}">Actualizar Perfil</a>
+
+    </div>
+</div>
+
+{% endblock %}

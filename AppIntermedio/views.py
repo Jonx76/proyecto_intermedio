@@ -79,7 +79,7 @@ class PanelLogout(LogoutView):
 
 class SignUpView(SuccessMessageMixin, CreateView):
   template_name = 'ingreso/crear_cuenta_form.html'
-  success_url = reverse_lazy('inicio')
+  success_url = reverse_lazy('login')
   form_class = UserCreationForm
   success_message = "¡¡ Se creo tu perfil satisfactoriamente !!"
 

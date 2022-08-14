@@ -2,12 +2,15 @@ from django.shortcuts import render, redirect
 from .models import  Libro, Registro
 from .forms import  ConsultaForm, LibroForm, RegistroForm
 from django.http import HttpResponse
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, UpdateView
 from django.views.generic.detail import DetailView
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth.models import User
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin, UserPassesTestMixin
+
 
 
 # Create your views here.
@@ -106,3 +109,23 @@ def consulta(request):
         else:
             data["form"] = formulario    
     return render(request, "Consulta/consulta.html", data)
+
+class perfilusuario(LoginRequiredMixin,UserPassesTestMixin, DetailView):
+
+    model = User
+    template_name = "Usuario\detalle_usuario.html"
+    
+    def test_func(self):
+        return self.request.user.id == int(self.kwargs['pk'])
+
+class Actualizar_usuario(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+
+    model = User
+    template_name = "Usuario/usuario_form.html"
+    fields = ["username", "email", "first_name", "last_name"]
+
+    def get_success_url(self):
+        return reverse_lazy("detalleusuario", kwargs={"pk": self.request.user.id})
+
+    def test_func(self):
+        return self.request.user.id == int(self.kwargs['pk'])

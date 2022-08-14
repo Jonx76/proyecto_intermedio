@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block titulo %} Actualizar Perfil {% endblock %}
+
+{% block contenido %}
+
+<div class="card">
+    <div class="card-header">
+        Ingrese datos:
+    </div>
+    <div class="card-body">
+        
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Guardar">
+        </form>
+        
+    </div>
+    <div class="card-footer text-muted">
+        <a href="{% url 'detalleusuario' user.id %}">Volver a Usuario</a>
+    </div>
+</div>
+
+{% endblock %}
+
+
